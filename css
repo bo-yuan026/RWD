@@ -1,0 +1,332 @@
+<style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-weight: bold;
+      }
+
+      body {
+        background: url("images/bg.jpg");
+        /* min-width: 680px; */
+      }
+
+      .banner {
+        background: rgb(40, 197, 218);
+        border: 15px solid transparent;
+        border-width: 0 0 15px 0;
+        border-image: url("images/header_l.jpg") 0 0 10 0 round;
+        height: 200px;
+        max-width: 100%;
+        padding: 10px;
+        /* display: flex; */
+        position: relative;
+      }
+      .imageLogo {
+        width: 300px;
+      }
+      .imageBanner {
+        text-align: center;
+      }
+      .menu {
+        display: flex;
+        justify-content: center;
+      }
+      .menu li {
+        display: inline-block;
+        padding: 30px;
+      }
+      .menu a {
+        text-decoration: none;
+        padding: 10px;
+        color: #000;
+      }
+      .menu a:hover,
+      .active {
+        background: rgb(253, 238, 23);
+        border-radius: 20px;
+      }
+      .mobileMenu1 {
+        width: 36px;
+        height: 36px;
+        background: url("images/m_menu.png");
+        position: absolute;
+        right: 0;
+        top: 0;
+        visibility: hidden;
+      }
+      .one:hover .mobileMenu1 {
+        background: none;
+      }
+      .mobileMenu {
+        position: absolute;
+        right: 0;
+        top: 30px;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.5);
+        visibility: hidden;
+      }
+      .one:hover .mobileMenu {
+        visibility: visible;
+      }
+      .mobileMenu li {
+        margin: 5px 3px;
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid #555;
+      }
+      .mobileMenu a {
+        text-decoration: none;
+        color: #fff;
+      }
+      /*  */
+      .floatBox {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 40%;
+        right: 5px;
+      }
+      .floatBox a {
+        text-decoration: none;
+        background: #333;
+        border-radius: 50%;
+        margin-bottom: 5px;
+      }
+      .floatBox div {
+        width: 36px;
+        height: 36px;
+      }
+      .home {
+        background: url("images/m_menu.png");
+        background-position: 0% 90%;
+      }
+      .facebook {
+        background: url("images/m_menu.png");
+        background-position: 0% 70%;
+      }
+      .wrapper {
+        max-width: 860px;
+        min-height: 1980px;
+        margin: 50px auto;
+        color: #525252;
+      }
+      .wrapper div {
+        margin-top: 70px;
+      }
+      .wrapper strong {
+        font-size: 18px;
+        color: rgb(27, 123, 136);
+      }
+      .p_title img {
+        width: 100%;
+      }
+      .titleImg2 {
+        display: none;
+      }
+      .informationP {
+        text-align: center;
+        font-size: 18px;
+        line-height: 2;
+        background: url("images/hat.png") 100px 100px no-repeat;
+      }
+      .paragraph {
+        border: 2px solid rgb(40, 197, 218);
+        border-radius: 20px;
+        background: #fff;
+        position: relative;
+        /* width: 75%;
+        margin: 0 auto; */
+      }
+      .content {
+        padding: 35px 20px 20px;
+        line-height: 28px;
+        /* position: absolute; */
+      }
+      .subtitle {
+        width: 45px;
+        height: 45px;
+        padding: 15px;
+        border-radius: 50%;
+        color: #fff;
+        background: rgb(27, 123, 136);
+        font-size: 18px;
+        position: absolute;
+        top: -110px;
+        left: -30px;
+        text-align: center;
+      }
+      .girl1 {
+        /* float: right; */
+        position: absolute;
+        right: 20px;
+        top: -250px;
+      }
+      .girl2 {
+        position: absolute;
+        left: -50px;
+      }
+      .way_p {
+        position: absolute;
+        right: 30px;
+      }
+      .way_m {
+        display: none;
+      }
+      .stone {
+        height: 300px;
+      }
+      .stone2 {
+        height: 150px;
+      }
+      .warning {
+        padding-top: 20px;
+      }
+      .footer {
+        background: #000;
+        color: #fff;
+      }
+      .footerWrapper {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        justify-content: center;
+        display: flex;
+        margin: auto;
+        flex-wrap: wrap;
+      }
+      .footerLogo {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 5px;
+      }
+      .subtitleFooter {
+        width: 45px;
+        height: 45px;
+        padding: 10px;
+        border-radius: 50%;
+        text-align: center;
+        background: #666;
+      }
+      .footer p {
+        text-align: center;
+        padding: 10px;
+        border-top: 1px solid #333;
+        letter-spacing: 1px;
+      }
+      @media screen and (max-width: 680px) {
+        .wrapper {
+          margin: 10px;
+        }
+        .menu,
+        .floatBox {
+          max-height: 0;
+          overflow: hidden;
+        }
+        .mobileMenu1 {
+          visibility: visible;
+        }
+        .titleImg1 {
+          display: none;
+        }
+        .titleImg2 {
+          display: inline-block;
+        }
+        .informationP {
+          background: transparent;
+        }
+        .girl1,
+        .girl2 {
+          display: none;
+        }
+        .way_p {
+          display: none;
+        }
+        .way_m {
+          display: block;
+          margin: auto;
+        }
+        .subtitle {
+          left: calc(50% - 40px);
+        }
+        .paragraph {
+          padding-top: 20px;
+        }
+        .footerWrapper {
+          display: grid;
+          box-sizing: border-box;
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr 1fr;
+          grid-template-areas:
+            "footerExecution"
+            "footerThank";
+          background: #666;
+          box-sizing: border-box;
+          padding: 0;
+        }
+        .footerExecution {
+          height: 00px;
+          grid-area: footerExecution;
+          display: grid;
+          grid-template-rows: 50px 120px 120px;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-areas: "box1 box1" "box2 box3" "box4 box5";
+          grid-gap: 1px;
+        }
+        .footerThank {
+          grid-area: footerThank;
+          display: grid;
+          grid-template-rows: 50px 120px 120px;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-areas: "box1 box1" "box6 box7" "box8 box5";
+          grid-gap: 1px;
+        }
+        .footerLogo {
+          text-align: center;
+          padding-bottom: 30px;
+          padding-top: 30px;
+          background: #000;
+        }
+        .box1 {
+          grid-area: box1;
+          background: #666;
+        }
+        .subtitleFooter {
+          width: 100%;
+        }
+        .box2 {
+          grid-area: box2;
+          padding-top: 40px;
+        }
+        .box3 {
+          grid-area: box3;
+          padding-top: 10px;
+        }
+        .box4 {
+          grid-area: box4;
+          padding-top: 10px;
+        }
+        .box5 {
+          grid-area: box5;
+        }
+        .box6 {
+          grid-area: box6;
+          padding-top: 10px;
+        }
+        .box7 {
+          grid-area: box7;
+          padding-top: 10px;
+        }
+        .box8 {
+          grid-area: box8;
+          padding-top: 30px;
+        }
+        .subtitleFooter {
+          border-radius: 0%;
+          padding: 0;
+          margin: -15px 0 0 0;
+        }
+        .subtitleFooter br {
+          display: none;
+        }
+      }
+    </style>
